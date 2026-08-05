@@ -1,6 +1,18 @@
+const LOCAL_PREVIEWS = {
+  cafelist: "cafelist",
+  ingong: "ingong",
+  kcal: "kcal",
+  orders: "orders",
+  tripgogo: "tripgogo",
+  refrigeratorrecipe: "refrigerator",
+};
+
 export default function ProjectCard({ project }) {
   const { title, description, url, github, techStack } = project;
-  const previewImage = url
+  const localFile = LOCAL_PREVIEWS[title.toLowerCase()];
+  const previewImage = localFile
+    ? `/${localFile}.png`
+    : url
     ? `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`
     : null;
 

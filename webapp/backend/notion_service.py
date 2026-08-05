@@ -25,5 +25,8 @@ def get_portfolio_items():
     response = client.data_sources.query(
         data_source_id=DATA_SOURCE_ID,
         filter={"property": "포트폴리오 노출", "checkbox": {"equals": True}},
+        sorts=[{"property": "마지막푸시일", "direction": "descending"}],
     )
-    return [_page_to_project(page) for page in response["results"]]
+    items = [_page_to_project(page) for page in response["results"]]
+    items.sort(key=lambda item: item["title"] == "refrigeratorRecipe")
+    return items
