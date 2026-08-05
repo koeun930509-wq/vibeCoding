@@ -1,0 +1,14 @@
+node_modules/
+.vite/
+dist/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# secrets
+.env
+
+# Claude Code local settings
+.claude/settings.local.json
