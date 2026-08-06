@@ -28,10 +28,17 @@ body {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: stretch;
   gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem 3rem;
+}
+
+@media (min-width: 960px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .project-card {
