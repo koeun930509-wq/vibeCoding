@@ -106,6 +106,19 @@ body {
   line-height: 1.5;
 }
 
+@media (min-width: 960px) {
+  .project-card__body {
+    min-height: 300px;
+  }
+
+  .project-card__body p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
+
 .project-card__tags {
   list-style: none;
   display: flex;
