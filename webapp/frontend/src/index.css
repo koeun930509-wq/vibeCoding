@@ -107,15 +107,17 @@ body {
 }
 
 @media (min-width: 960px) {
-  .project-card__body {
-    min-height: 300px;
-  }
-
   .project-card__body p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    min-height: 2.85em;
+  }
+
+  .project-card__tags {
+    min-height: 2.9rem;
+    align-content: flex-start;
   }
 }
 
