@@ -5,6 +5,7 @@ const LOCAL_PREVIEWS = {
   orders: "orders",
   tripgogo: "tripgogo",
   refrigeratorrecipe: "refrigerator",
+  gurumetabi: "gurumetabi",
 };
 
 export default function ProjectCard({ project }) {
