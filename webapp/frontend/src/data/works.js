@@ -84,7 +84,7 @@ export const works = [
       ai: ["공공데이터 · 날씨 API 연동", "혼잡도 그래프 구현"],
     },
     roleSummary: "무엇을 보여줄지와 화면 구성은 제가 정하고, 데이터 연동과 그래프는 AI와 협업해 완성했습니다.",
-    period: "[기간 입력]",
+    period: "2026.08.01 ~ 2026.08.05",
     stack: ["JavaScript", "React", "Vite", "Recharts", "Supabase", "공공데이터포털 API", "OpenWeatherMap"],
     problem:
       "공항에 도착하기 전에 어느 게이트로 가야 출국심사를 빨리 받을 수 있는지 알고 싶었습니다. 하지만 공공데이터는 숫자 목록이라 한눈에 판단하기 어려웠습니다.",
