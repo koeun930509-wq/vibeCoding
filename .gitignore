@@ -2,6 +2,9 @@ node_modules/
 .vite/
 dist/
 
+# design reference mockups (not app code)
+html_ds/
+
 # Python
 .venv/
 __pycache__/

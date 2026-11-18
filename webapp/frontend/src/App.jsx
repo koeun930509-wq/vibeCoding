@@ -1,20 +1,12 @@
-import { useEffect, useState } from "react";
-import Header from "./components/Header.jsx";
-import ProjectGrid from "./components/ProjectGrid.jsx";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import WorkDetail from "./pages/WorkDetail.jsx";
 
 export default function App() {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    fetch("/api/portfolio")
-      .then((res) => res.json())
-      .then(setProjects);
-  }, []);
-
   return (
-    <>
-      <Header />
-      <ProjectGrid projects={projects} />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/work/:slug" element={<WorkDetail />} />
+    </Routes>
   );
 }
