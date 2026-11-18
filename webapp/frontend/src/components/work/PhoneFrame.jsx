@@ -25,12 +25,11 @@ function StatusBar() {
 }
 
 export default function PhoneFrame({ src, alt, variant = "default" }) {
-  const outerRadius = variant === "skypick" ? "rounded-[32px]" : "rounded-phone";
   const aspect = variant === "skypick" ? "9/19" : undefined;
   const minHeight = variant === "skypick" ? "" : "min-h-[560px]";
 
   return (
-    <div className={`w-full h-full bg-surface-card border border-line-strong ${outerRadius} overflow-hidden flex flex-col`}>
+    <div className="w-full h-full bg-surface-card border border-line-strong rounded-md2 overflow-hidden flex flex-col">
       <StatusBar />
       <div className="flex-1">
         <Screenshot src={src} alt={alt} aspect={aspect ?? "auto"} className={`h-full min-h-full ${minHeight}`} />
