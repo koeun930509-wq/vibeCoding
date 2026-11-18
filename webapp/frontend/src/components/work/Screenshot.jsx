@@ -21,7 +21,7 @@ export default function Screenshot({
     return (
       <div
         className={`flex items-center justify-center text-center bg-placeholder-fill border border-dashed border-placeholder-line text-accent-strong text-sm font-medium p-4 ${
-          bare ? "aspect-[9/20] rounded-[24px]" : ""
+          bare ? "aspect-[9/20]" : ""
         } ${className}`}
         style={bare ? undefined : { aspectRatio: aspect }}
       >
@@ -39,7 +39,7 @@ export default function Screenshot({
         width={width}
         height={height}
         onError={() => setFailed(true)}
-        className={`block h-auto w-full rounded-[24px] border border-line-strong ${className}`}
+        className={`block h-auto w-full ${className}`}
       />
     );
   }
