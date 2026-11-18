@@ -145,9 +145,10 @@ export const works = [
     ],
     lesson: "[배운 점 입력. 예: 앱은 웹과 달리 테스트 기간 동안 사용자 피드백을 받아 고쳐 가는 과정이 필요했습니다.]",
     screenshots: {
+      pc: "/images/skypick/pc.jpg",
       phones: [
         { src: "/images/skypick/extra-0.png", caption: "[스플래시]", alt: "[스크린샷 1]" },
-        { src: "/images/skypick/extra-1.png", caption: "[홈 화면]", alt: "[스크린샷 2]" },
+        { src: "/images/skypick/extra-1.jpg", caption: "[홈 화면]", alt: "[스크린샷 2]" },
         { src: "/images/skypick/extra-2.png", caption: "[화면 이름]", alt: "[스크린샷 3]" },
         { src: "/images/skypick/extra-3.png", caption: "[화면 이름]", alt: "[스크린샷 4]" },
       ],
