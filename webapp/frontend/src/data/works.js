@@ -107,7 +107,7 @@ export const works = [
     screenshots: {
       pc: "/images/ingong/pc.png",
       pcCaption: "[PC 스크린샷 · 혼잡도 대시보드]",
-      mobile: "/images/ingong/mobile.png",
+      mobile: "/images/ingong/mobile.jpg",
       mobileCaption: "[모바일 스크린샷]",
     },
   },
