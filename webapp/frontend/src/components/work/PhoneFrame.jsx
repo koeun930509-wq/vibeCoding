@@ -26,13 +26,12 @@ function StatusBar() {
 
 export default function PhoneFrame({ src, alt, variant = "default" }) {
   const aspect = variant === "skypick" ? "9/19" : undefined;
-  const fit = variant === "skypick" ? "cover" : "contain";
 
   return (
     <div className="w-full h-full bg-surface-card border border-line-strong rounded-md2 overflow-hidden flex flex-col">
       <StatusBar />
       <div className="flex-1 min-h-0">
-        <Screenshot src={src} alt={alt} aspect={aspect ?? "auto"} fit={fit} className="h-full" />
+        <Screenshot src={src} alt={alt} aspect={aspect ?? "auto"} fit="cover" objectPosition="top" className="h-full" />
       </div>
     </div>
   );
