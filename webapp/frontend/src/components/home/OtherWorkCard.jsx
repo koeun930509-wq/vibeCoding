@@ -19,12 +19,12 @@ export default function OtherWorkCard({ work }) {
         </div>
         <div className="flex gap-4 text-sm font-bold">
           {work.links?.live && (
-            <a href={work.links.live} className="min-h-8 inline-flex items-center">
+            <a href={work.links.live} target="_blank" rel="noreferrer" className="min-h-8 inline-flex items-center">
               Live
             </a>
           )}
           {work.links?.github && (
-            <a href={work.links.github} className="min-h-8 inline-flex items-center">
+            <a href={work.links.github} target="_blank" rel="noreferrer" className="min-h-8 inline-flex items-center">
               GitHub
             </a>
           )}

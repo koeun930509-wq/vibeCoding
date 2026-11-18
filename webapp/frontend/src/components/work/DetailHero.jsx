@@ -29,6 +29,8 @@ export default function DetailHero({ work }) {
             {work.links?.live && (
               <a
                 href={work.links.live}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center min-h-12 px-7 bg-accent text-white text-base font-bold rounded-sm2 no-underline"
               >
                 Live 보기
@@ -37,6 +39,8 @@ export default function DetailHero({ work }) {
             {work.links?.github && (
               <a
                 href={work.links.github}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center min-h-12 px-7 bg-surface-card text-ink text-base font-bold rounded-sm2 border border-line-strong no-underline"
               >
                 GitHub
