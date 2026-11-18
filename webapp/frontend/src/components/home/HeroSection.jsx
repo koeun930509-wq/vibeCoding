@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="bg-[url(/images/hero-bg.png)] bg-cover bg-top bg-no-repeat">
+    <section className="min-h-[420px] bg-[url(/images/hero-bg.png)] bg-cover bg-top bg-no-repeat">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 pt-14 lg:pt-24 pb-16 flex flex-col gap-6">
         <span className="self-start text-sm font-bold text-accent bg-accent-tint px-3.5 py-1.5 rounded-full">
           Portfolio
