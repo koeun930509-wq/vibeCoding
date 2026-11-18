@@ -2,7 +2,7 @@ import Screenshot from "./Screenshot.jsx";
 
 export function StatusBar() {
   return (
-    <div className="flex items-center justify-between px-5 py-2 text-xs font-semibold">
+    <div className="flex items-center justify-between px-5 py-2 text-xs">
       <span>9:41</span>
       <div className="flex items-center gap-1.5">
         <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor" aria-hidden="true">

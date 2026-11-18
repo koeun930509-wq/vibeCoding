@@ -16,7 +16,7 @@ export default function SkyPickPhoneGrid({ phones }) {
               bare
             />
           </div>
-          <span className="text-center text-[15px] font-bold text-ink-muted">{phone.caption}</span>
+          <span className="text-center text-[15px] text-ink-muted">{phone.caption}</span>
         </div>
       ))}
     </div>
