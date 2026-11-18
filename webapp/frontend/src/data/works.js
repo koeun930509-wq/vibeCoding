@@ -61,9 +61,9 @@ export const works = [
     lesson:
       "머릿속의 디자인이 AI 구현에서 그대로 나오지 않아 여러 번 막혔습니다. 그때마다 [해결 방법: 레퍼런스 제공, 간격·색 값 지정, 화면 단위로 나눠 요청 등]으로 조정하면서, AI에게 디자인 의도를 정확히 전달하는 방법을 익혔습니다.",
     screenshots: {
-      pc: "/images/gurumetabi/pc.png",
+      pc: "/images/gurumetabi/pc.jpg",
       pcCaption: "[PC 스크린샷 · 첫 화면(검색창 중심)]",
-      mobile: "/images/gurumetabi/mobile.png",
+      mobile: "/images/gurumetabi/mobile.jpg",
       mobileCaption: "[모바일 스크린샷]",
       extra: [
         { src: "/images/gurumetabi/extra-0.png", caption: "검색 결과", alt: "[스크린샷 · 검색 결과]" },
