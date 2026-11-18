@@ -28,11 +28,9 @@ export default function PhoneFrame({ src, alt, variant = "default" }) {
   const aspect = variant === "skypick" ? "9/19" : undefined;
 
   return (
-    <div className="w-full h-full bg-surface-card border border-line-strong rounded-md2 overflow-hidden flex flex-col">
+    <div className="w-full bg-surface-card border border-line-strong rounded-md2 overflow-hidden flex flex-col">
       <StatusBar />
-      <div className="flex-1 min-h-0">
-        <Screenshot src={src} alt={alt} aspect={aspect ?? "auto"} fit="cover" objectPosition="top" className="h-full" />
-      </div>
+      <Screenshot src={src} alt={alt} aspect={aspect ?? "auto"} fit="cover" objectPosition="top" />
     </div>
   );
 }
