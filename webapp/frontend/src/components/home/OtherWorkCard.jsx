@@ -3,7 +3,7 @@ import Screenshot from "../work/Screenshot.jsx";
 export default function OtherWorkCard({ work }) {
   return (
     <div className="flex flex-col bg-surface border border-line rounded-md2 overflow-hidden">
-      <Screenshot src={work.thumbnail} alt={`[${work.title} 대표 이미지]`} aspect="4/3" />
+      <Screenshot src={work.thumbnail} alt={`[${work.title} 대표 이미지]`} aspect="4/3" objectPosition="top" />
       <div className="flex flex-col gap-3 p-6">
         <h3 className="text-xl font-bold">{work.title}</h3>
         <p className="text-[15px] leading-relaxed text-ink-soft flex-1">{work.summary}</p>
