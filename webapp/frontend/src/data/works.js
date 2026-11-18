@@ -34,7 +34,7 @@ export const works = [
     featured: true,
     caseLabel: "대표작 01",
     chips: ["여행 · 맛집 · 웹앱"],
-    links: { live: "#", github: "#" },
+    links: { live: "https://gurume-tabi.com/", github: "https://github.com/koeun930509-wq/gurumeTabi" },
     role: {
       mine: ["서비스 기획", "UI 디자인", "퍼블리싱 수정"],
       ai: ["로고 제작 (ChatGPT)", "React 구현 · 스크랩 · Google API (Claude)"],
@@ -78,7 +78,7 @@ export const works = [
     featured: true,
     caseLabel: "대표작 02",
     chips: ["공항 · 혼잡도 · 대시보드"],
-    links: { live: "#", github: "#" },
+    links: { live: "https://in-gong-one.vercel.app", github: "https://github.com/koeun930509-wq/inGong" },
     role: {
       mine: ["서비스 기획", "사이트 대부분의 UI 디자인", "퍼블리싱 수정"],
       ai: ["공공데이터 · 날씨 API 연동", "혼잡도 그래프 구현"],
@@ -161,7 +161,7 @@ export const works = [
     summary: "추억의 어린시절 강한 자만 살아남았던 놀이터를 3D로 구현",
     featured: false,
     stack: ["three.js", "Supabase"],
-    links: { live: "#", github: "#" },
+    links: { live: "https://strongplayground.vercel.app/", github: "https://github.com/Banzai0509/StrongPlayGround" },
     thumbnail: "/stongplayground.jpg",
   },
   {
@@ -170,7 +170,7 @@ export const works = [
     summary: "여행할 지역과 일정을 입력하면 현지 관광지와 맛집을 추천해준다",
     featured: false,
     stack: ["React", "Flask", "Gemini API"],
-    links: { live: "#", github: "#" },
+    links: { live: "https://tripgogo-psi.vercel.app", github: "https://github.com/koeun930509-wq/tripgogo" },
     thumbnail: "/tripgogo.png",
   },
   {
@@ -179,7 +179,7 @@ export const works = [
     summary: "음식 사진을 올리면 칼로리 정보와 소비에 필요한 운동 시간을 알려준다",
     featured: false,
     stack: ["React", "Flask", "Gemini API"],
-    links: { live: "#", github: "#" },
+    links: { live: "https://kcal-mu.vercel.app", github: "https://github.com/koeun930509-wq/kcal" },
     thumbnail: "/kcal.png",
   },
   {
@@ -188,7 +188,7 @@ export const works = [
     summary: "인기 소금빵 카페 Vetong의 주문을 기다리지 않고 온라인으로 할 수 있다",
     featured: false,
     stack: ["React", "Tailwind CSS", "Supabase"],
-    links: { live: "#", github: "#" },
+    links: { live: "https://orders-ebon.vercel.app", github: "https://github.com/koeun930509-wq/orders" },
     thumbnail: "/orders.png",
   },
   {
@@ -197,7 +197,7 @@ export const works = [
     summary: "냉장고 속 사진을 올리면 레시피를 추천합니다",
     featured: false,
     stack: ["Python", "Flask", "OpenRouter API"],
-    links: { live: "#", github: "#" },
+    links: { live: "https://refrigerator-recipe.vercel.app/", github: "https://github.com/koeun930509-wq/refrigeratorRecipe" },
     thumbnail: "/refrigerator.png",
   },
 ];
