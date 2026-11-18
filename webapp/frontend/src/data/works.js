@@ -147,10 +147,10 @@ export const works = [
     screenshots: {
       pc: "/images/skypick/pc.jpg",
       phones: [
-        { src: "/images/skypick/extra-0.png", caption: "[스플래시]", alt: "[스크린샷 1]" },
-        { src: "/images/skypick/extra-1.jpg", caption: "[홈 화면]", alt: "[스크린샷 2]" },
-        { src: "/images/skypick/extra-2.png", caption: "[화면 이름]", alt: "[스크린샷 3]" },
-        { src: "/images/skypick/extra-3.png", caption: "[화면 이름]", alt: "[스크린샷 4]" },
+        { src: "/images/skypick/extra-0.jpg", caption: "스플래시", alt: "[스크린샷 1]" },
+        { src: "/images/skypick/extra-1.jpg", caption: "홈 화면", alt: "[스크린샷 2]" },
+        { src: "/images/skypick/extra-2.jpg", caption: "기온별 옷차림", alt: "[스크린샷 3]" },
+        { src: "/images/skypick/extra-3.jpg", caption: "음성 설정", alt: "[스크린샷 4]" },
       ],
     },
   },
