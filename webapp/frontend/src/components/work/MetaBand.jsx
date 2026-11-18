@@ -10,7 +10,7 @@ export default function MetaBand({ work }) {
 
   return (
     <div className="w-full bg-surface-card border-t border-b border-line">
-      <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-10 lg:py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 py-10 lg:py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {items.map((item) => (
           <div key={item.label} className="flex flex-col gap-3">
             <MetaIcon name={item.icon} />

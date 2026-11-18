@@ -5,7 +5,7 @@ export default function PrevNextNav({ prev, next }) {
 
   return (
     <div className="w-full mt-24 lg:mt-32 border-t border-line">
-      <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-12 sm:py-16 flex flex-col sm:flex-row flex-wrap gap-6 justify-between items-stretch sm:items-end">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 py-12 sm:py-16 flex flex-col sm:flex-row flex-wrap gap-6 justify-between items-stretch sm:items-end">
         {prev ? (
           <div className="flex flex-col gap-1 items-start">
             <span className="text-sm font-bold text-ink-muted">이전 작업</span>

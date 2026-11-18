@@ -4,7 +4,7 @@ export default function DetailHero({ work }) {
   const isTesting = work.status === "testing";
 
   return (
-    <div className="max-w-[1120px] mx-auto px-5 sm:px-8 pt-14 sm:pt-24 pb-14 flex flex-col gap-7">
+    <div className="max-w-[1280px] mx-auto px-5 sm:px-8 pt-14 sm:pt-24 pb-14 flex flex-col gap-7">
       <div className="flex flex-wrap gap-2">
         {work.chips.map((chip, i) => (
           <Chip key={chip} variant={i === 0 ? "solid" : "outline"}>

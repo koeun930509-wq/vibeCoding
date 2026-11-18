@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function TopBar({ caseIndex, total }) {
   return (
     <div className="w-full border-b border-line">
-      <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-5 flex flex-wrap gap-3 justify-between items-center">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 py-5 flex flex-wrap gap-3 justify-between items-center">
         <Link
           to="/"
           className="text-[15px] font-medium text-ink no-underline min-h-11 inline-flex items-center"
