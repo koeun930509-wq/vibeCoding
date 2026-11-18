@@ -40,7 +40,7 @@ export const works = [
       ai: ["로고 제작 (ChatGPT)", "React 구현 · 스크랩 · Google API (Claude)"],
     },
     roleSummary: "방향과 화면은 제가 정하고, 구현은 AI와 협업해 완성했습니다.",
-    period: "[기간 입력]",
+    period: "2026.08.10 ~ 2026.08.30",
     stack: ["React", "Vite", "Tailwind CSS", "Supabase", "Google Places API", "Google Maps API", "네이버 API"],
     problem:
       "일본 여행 중 맛집을 찾으면 광고성 후기가 많고, 일본어 정보는 읽기 어렵고, 정보가 여러 앱에 흩어져 있어서 비교하기 힘들었습니다. 한 곳에서 믿을 만한 정보를 보고 저장까지 하고 싶었습니다.",
