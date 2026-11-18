@@ -5,7 +5,11 @@ import { featuredWorks, otherWorks } from "../data/works.js";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-surface text-ink font-sans">
+    <div className="min-h-screen text-ink font-sans">
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10 bg-surface bg-[url('/images/page-bg.png')] bg-cover bg-center bg-no-repeat"
+      />
       <HeroSection />
 
       <section className="max-w-[1280px] mx-auto px-5 sm:px-8 flex flex-col gap-8">

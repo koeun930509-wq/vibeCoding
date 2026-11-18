@@ -30,7 +30,11 @@ export default function WorkDetail() {
   const { prev, next } = getAdjacentWorks(slug);
 
   return (
-    <div className="min-h-screen bg-surface text-ink font-sans">
+    <div className="min-h-screen text-ink font-sans">
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10 bg-surface bg-[url('/images/page-bg.png')] bg-cover bg-center bg-no-repeat"
+      />
       <TopBar caseIndex={caseIndex} total={featuredWorks.length} />
       <DetailHero work={work} />
       <ScreenshotSection work={work} />
