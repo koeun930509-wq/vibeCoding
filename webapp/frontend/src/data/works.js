@@ -19,7 +19,7 @@
  *     pc?: string, pcCaption?: string,
  *     mobile?: string, mobileCaption?: string,
  *     extra?: { src: string, caption: string, alt: string }[],   // gurumeTabi 전용
- *     phones?: { src: string, caption: string, alt: string }[],  // SkyPick 전용
+ *     phones?: { src: string, caption: string, alt: string, width?: number, height?: number }[],  // SkyPick 전용, width/height는 원본 이미지 치수(레이아웃 시프트 방지용)
  *   }
  *   thumbnail?: string|null  // 기타 작업 전용
  * }
@@ -147,10 +147,10 @@ export const works = [
     screenshots: {
       pc: "/images/skypick/pc.jpg",
       phones: [
-        { src: "/images/skypick/extra-0.jpg", caption: "스플래시", alt: "[스크린샷 1]" },
-        { src: "/images/skypick/extra-1.jpg", caption: "홈 화면", alt: "[스크린샷 2]" },
-        { src: "/images/skypick/extra-2.jpg", caption: "기온별 옷차림", alt: "[스크린샷 3]" },
-        { src: "/images/skypick/extra-3.jpg", caption: "음성 설정", alt: "[스크린샷 4]" },
+        { src: "/images/skypick/extra-0.jpg", caption: "스플래시", alt: "[스크린샷 1]", width: 756, height: 1448 },
+        { src: "/images/skypick/extra-1.jpg", caption: "홈 화면", alt: "[스크린샷 2]", width: 647, height: 1252 },
+        { src: "/images/skypick/extra-2.jpg", caption: "기온별 옷차림", alt: "[스크린샷 3]", width: 1080, height: 2089 },
+        { src: "/images/skypick/extra-3.jpg", caption: "음성 설정", alt: "[스크린샷 4]", width: 1080, height: 2097 },
       ],
     },
   },

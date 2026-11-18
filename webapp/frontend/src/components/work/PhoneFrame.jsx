@@ -24,13 +24,11 @@ function StatusBar() {
   );
 }
 
-export default function PhoneFrame({ src, alt, variant = "default" }) {
-  const aspect = variant === "skypick" ? "9/19" : undefined;
-
+export default function PhoneFrame({ src, alt }) {
   return (
     <div className="w-full bg-surface-card border border-line-strong rounded-md2 overflow-hidden flex flex-col">
       <StatusBar />
-      <Screenshot src={src} alt={alt} aspect={aspect ?? "auto"} fit="cover" objectPosition="top" />
+      <Screenshot src={src} alt={alt} aspect="auto" fit="cover" objectPosition="top" />
     </div>
   );
 }

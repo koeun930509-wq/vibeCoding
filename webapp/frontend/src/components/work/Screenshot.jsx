@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 
-export default function Screenshot({ src, alt, aspect = "4/3", objectPosition = "center", fit = "cover", className = "" }) {
+export default function Screenshot({
+  src,
+  alt,
+  aspect = "4/3",
+  objectPosition = "center",
+  fit = "cover",
+  className = "",
+  bare = false,
+  width,
+  height,
+}) {
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -10,11 +20,27 @@ export default function Screenshot({ src, alt, aspect = "4/3", objectPosition = 
   if (!src || failed) {
     return (
       <div
-        className={`flex items-center justify-center text-center bg-placeholder-fill border border-dashed border-placeholder-line text-accent-strong text-sm font-medium p-4 ${className}`}
-        style={{ aspectRatio: aspect }}
+        className={`flex items-center justify-center text-center bg-placeholder-fill border border-dashed border-placeholder-line text-accent-strong text-sm font-medium p-4 ${
+          bare ? "aspect-[9/20] rounded-[24px]" : ""
+        } ${className}`}
+        style={bare ? undefined : { aspectRatio: aspect }}
       >
         {alt}
       </div>
+    );
+  }
+
+  if (bare) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        width={width}
+        height={height}
+        onError={() => setFailed(true)}
+        className={`block h-auto w-full rounded-[24px] border border-line-strong ${className}`}
+      />
     );
   }
 
