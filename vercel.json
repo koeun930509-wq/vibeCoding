@@ -6,7 +6,7 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "webapp/backend/app.py" },
-    { "handle": "filesystem" },
+    { "src": "/(.*\\.[a-zA-Z0-9]+)", "dest": "webapp/frontend/$1" },
     { "src": "/(.*)", "dest": "webapp/frontend/index.html" }
   ]
 }
