@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Screenshot({ src, alt, aspect = "4/3", className = "" }) {
+export default function Screenshot({ src, alt, aspect = "4/3", objectPosition = "center", className = "" }) {
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Screenshot({ src, alt, aspect = "4/3", className = "" })
       loading="lazy"
       onError={() => setFailed(true)}
       className={`w-full h-full object-cover ${className}`}
-      style={{ aspectRatio: aspect }}
+      style={{ aspectRatio: aspect, objectPosition }}
     />
   );
 }
