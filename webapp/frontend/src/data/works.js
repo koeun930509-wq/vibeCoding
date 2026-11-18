@@ -162,7 +162,7 @@ export const works = [
     featured: false,
     stack: ["three.js", "Supabase"],
     links: { live: "#", github: "#" },
-    thumbnail: null,
+    thumbnail: "/stongplayground.jpg",
   },
   {
     slug: "tripgogo",
