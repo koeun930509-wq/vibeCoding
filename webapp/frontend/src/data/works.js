@@ -66,8 +66,8 @@ export const works = [
       mobile: "/images/gurumetabi/mobile.jpg",
       mobileCaption: "[모바일 스크린샷]",
       extra: [
-        { src: "/images/gurumetabi/extra-0.png", caption: "검색 결과", alt: "[스크린샷 · 검색 결과]" },
-        { src: "/images/gurumetabi/extra-1.png", caption: "검색 결과 상세보기", alt: "[스크린샷 · 검색 결과 상세보기]" },
+        { src: "/images/gurumetabi/extra-0.jpg", caption: "검색 결과", alt: "[스크린샷 · 검색 결과]" },
+        { src: "/images/gurumetabi/extra-1.webp", caption: "검색 결과 상세보기", alt: "[스크린샷 · 검색 결과 상세보기]" },
       ],
     },
   },
