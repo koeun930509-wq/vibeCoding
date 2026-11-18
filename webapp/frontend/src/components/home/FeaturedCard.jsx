@@ -12,7 +12,9 @@ export default function FeaturedCard({ work }) {
         <span className="text-xs font-bold text-accent">{work.caseLabel}</span>
         <h3 className="text-2xl font-extrabold tracking-tight">{work.title}</h3>
         <p className="text-base text-ink-soft flex-1">{work.summary}</p>
-        <span className="text-sm font-bold text-accent">사례 보기 →</span>
+        <span className="self-start inline-flex items-center text-sm font-bold text-white bg-accent hover:saturate-[1.2] transition-[filter] px-4 py-2 rounded-[10px]">
+          사례 보기 →
+        </span>
       </div>
     </Link>
   );
