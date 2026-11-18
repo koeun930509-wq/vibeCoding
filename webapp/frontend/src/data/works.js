@@ -126,7 +126,7 @@ export const works = [
     },
     roleSummary: "방향과 화면은 제가 정하고, 구현은 AI와 협업해 완성했습니다. [실제와 다르면 수정]",
     period: "[기간 입력]",
-    stack: ["[기술 1]", "[기술 2]", "[기술 3]"],
+    stack: ["Kotlin", "Jetpack Compose", "Retrofit", "기상청 API", "에어코리아 API"],
     problem:
       "날씨 앱은 기온과 강수확률 같은 숫자만 보여줘서, 정작 오늘 우산을 챙겨야 하는지, 뭘 입어야 하는지는 직접 판단해야 했습니다. [실제로 겪은 불편에 맞게 수정]",
     decisions: [
