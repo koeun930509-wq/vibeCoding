@@ -1,63 +1,84 @@
 # CLAUDE-webapp.md
 
-Notion DB를 CMS로 사용하는 1페이지 포트폴리오 웹앱. 전체 요구사항은 [prd-webapp.md](./prd-webapp.md) 참고.
-
-새 DB를 만들지 않고, sync-repos가 관리하는 기존 `GitHub 리포지토리 관리` DB(`vibecoding` integration 연결됨)를 그대로 조회한다.
+React Router 다중 페이지 포트폴리오 웹앱(메인 1페이지 + 사례 상세 3페이지). 디자인 시스템은 `html_ds/design-system/`(로컬 참고 자료, git 미추적)을 기준으로 한다. 과거 PRD(`prd-webapp.md`)는 Notion DB를 CMS로 쓰는 1페이지 버전을 전제로 작성되었고 현재 구조와는 다르다 — 이 문서가 최신 기준이다.
 
 ## 기술 스택
 
-- Frontend: React (JavaScript)
-- Backend: Flask (Python)
-- Database / CMS: Notion DB
-- Deployment: Vercel (Claude Vercel MCP 연동)
+- Frontend: React 18 + React Router 7 + Tailwind CSS v4(`@tailwindcss/vite`) + Vite 5
+- Backend: Flask (Python) — Notion 연동용, 현재 화면에는 연결되어 있지 않음(아래 "레거시 Notion 연동" 참고)
+- Deployment: Vercel (`vercel.json` — `@vercel/static-build` + `@vercel/python`)
+- 폰트: Pretendard Variable (jsDelivr CDN)
 
 ## 폴더 구조
 
 ```
-260805/
-├── index.html                        # 프로젝트 루트에 위치, /webapp/frontend/src/main.jsx 참조
+vibeCoding/                               # 저장소 루트 = Vite root
+├── index.html                            # Pretendard 폰트 link, /webapp/frontend/src/main.jsx 참조
+├── vercel.json                           # 루트 vercel.json이 실제 배포에 사용됨
+├── public/
+│   ├── *.png                             # 레거시 Notion 화면용 프로젝트 썸네일 (cafelist.png 등)
+│   └── images/
+│       ├── hero-bg.png, page-bg.png      # 배경 이미지
+│       └── <slug>/                       # 대표작별 스크린샷 (pc.jpg, mobile.jpg, extra-N.*)
 │
 └── webapp/
-    ├── backend/                      # Flask
-    │   ├── app.py                    # GET /api/portfolio, CORS 설정
-    │   ├── notion_service.py         # Notion API 조회/필터링 (Published=true) — notion-client 패키지와 이름 충돌 방지
-    │   ├── requirements.txt          # flask, flask-cors, notion-client, python-dotenv
-    │   └── .env.example              # NOTION_API_KEY, NOTION_DATABASE_ID, NOTION_DATA_SOURCE_ID
+    ├── backend/                          # Flask, 레거시 Notion 연동 — 코드는 유지하되 화면 미연결
+    │   ├── app.py                        # GET /api/portfolio
+    │   └── notion_service.py
     │
-    ├── frontend/                     # React
-    │   ├── package.json
-    │   ├── vite.config.js            # root: '../..', build.outDir 등 조정
-    │   └── src/
-    │       ├── main.jsx
-    │       ├── App.jsx               # 1페이지: Header + ProjectGrid
-    │       └── components/
-    │           ├── Header.jsx
-    │           ├── ProjectGrid.jsx
-    │           └── ProjectCard.jsx   # URL 있으면 링크, 없으면 미노출
-    │
-    └── vercel.json                   # 프론트/백엔드 라우팅, 배포 설정
+    └── frontend/
+        ├── package.json
+        ├── vite.config.js                # root: "../..", @tailwindcss/vite 플러그인
+        └── src/
+            ├── main.jsx                  # BrowserRouter
+            ├── App.jsx                   # Route 정의: "/" , "/work/:slug"
+            ├── index.css                 # @import "tailwindcss" + @theme 디자인 토큰
+            ├── data/
+            │   └── works.js              # 전체 작품 데이터(대표작 + 기타 작업) — 유일한 콘텐츠 소스
+            ├── pages/
+            │   ├── Home.jsx              # 메인: Hero + 대표작 그리드 + 기타 작업 섹션
+            │   └── WorkDetail.jsx        # 사례 상세: /work/:slug
+            ├── components/
+            │   ├── home/                 # HeroSection, FeaturedGrid/Card, OtherWorkGrid/Card
+            │   └── work/                 # TopBar, DetailHero, Screenshot, BrowserFrame, PhoneFrame,
+            │                             # ScreenshotSection(slug별 분기), MetaBand, ProblemSection,
+            │                             # RoleSection/RoleCards, DecisionsSection/DecisionCard,
+            │                             # LessonSection, TechSection, PrevNextNav
+            └── legacy/
+                ├── NotionPortfolio.jsx   # 예전 App.jsx 로직 그대로 보존, 라우트에 연결 안 됨
+                └── legacy.css            # 예전 index.css(BEM) 그대로 보존
 ```
 
-## 규칙
+## 데이터 구조 (`src/data/works.js`)
 
-1. **[Notion 연동]** Flask 백엔드는 Python `notion-client`(3.x) 라이브러리로 Notion API와 통신한다. 조회는 `client.data_sources.query()`를 사용한다(3.x부터 `client.databases.query()`는 지원되지 않음). `NOTION_API_KEY`, `NOTION_DATABASE_ID`, `NOTION_DATA_SOURCE_ID`는 서버사이드 환경변수로만 다루고, 프론트엔드 코드나 퍼블릭 저장소에 절대 노출하지 않는다.
+모든 콘텐츠는 이 파일 하나의 `works` 배열에서 나온다. 백엔드 API를 호출하지 않는다.
 
-2. **[노출 필터]** `GitHub 리포지토리 관리` DB의 `포트폴리오 노출`(checkbox)이 `true`인 항목만 조회·응답한다.
+- `featured: true` — 대표작(gurumeTabi, inGong, SkyPick). `/work/:slug` 상세 페이지를 가지며 `role`/`period`/`stack`/`problem`/`decisions`/`lesson`/`screenshots` 전체 필드를 채운다.
+- `featured: false` — 기타 작업(StongPlayGround, tripgogo, kcal, orders, refrigeratorRecipe). 메인 카드에만 쓰이며 `title`/`summary`/`stack`/`links`/`thumbnail`만 사용한다.
+- `screenshots.pc`/`mobile`/`extra[]`/`phones[]` 경로는 `public/images/<slug>/` 아래 파일을 가리킨다. 파일이 없거나 로드에 실패하면 `Screenshot` 컴포넌트가 자동으로 연보라 placeholder(`bg-placeholder-fill` + 점선 `border-placeholder-line`)로 대체한다 — 코드 수정 없이 이미지만 넣으면 반영된다.
+- `[ ]` 대괄호로 남아있는 값(예: `period: "[기간 입력]"`)은 실제 정보가 아직 확정되지 않았다는 표시다. 사용자가 명시적으로 값을 주기 전에는 임의로 채우지 않는다.
 
-3. **[포트폴리오 데이터 항목]** `GitHub 리포지토리 관리` DB의 아래 속성만 사용한다.
+## 디자인 시스템
 
-   | Notion 속성명 | 타입 | API 응답 필드 |
-   |---|---|---|
-   | 저장소명 | title | title |
-   | 설명 | rich_text | description |
-   | URL | url | github (GitHub 저장소 링크) |
-   | 버셀 배포 URL | url | url (데모/서비스 바로가기) |
-   | 기술태그 | multi_select | techStack |
+색상·타이포·spacing·radius 토큰은 `webapp/frontend/src/index.css`의 `@theme` 블록에 정의되어 있다(Tailwind v4 방식, `tailwind.config.js` 없음). 핵심 원칙:
 
-4. **[백엔드 API]** `GET /api/portfolio` 하나로 노출 대상 데이터를 조회·가공해 JSON으로 반환한다. React 프론트엔드 도메인에 대해 CORS를 허용한다.
+- 강조색은 `accent`(#5B4BDB) 하나만 사용. 그림자(`shadow-*`)와 그라디언트(`bg-gradient-*`) 유틸리티는 쓰지 않는다 — 구분은 1px 선(`line`)과 면 색 차이로만 한다.
+- 폰트는 Pretendard Variable 하나(`--font-sans`).
+- 콘텐츠 최대 폭은 `max-w-[1280px]`로 모든 섹션 컨테이너에서 통일.
+- 카드 hover는 테두리색 변화(`border-line` → `hover:border-line-strong`)만 사용, transform/shadow 없음.
+- 브레이크포인트는 Tailwind 기본값(`sm` 640 / `md` 768 / `lg` 1024)을 쓰되, 그리드 열 수 전환은 주로 `md`/`lg`에서, 타이포그래피는 기본값→`sm`→`lg` 3단으로 처리한다.
 
-5. **[프론트엔드 레이아웃]** 1페이지 구성으로 Header(자기소개) → Project Grid(카드 목록) 순서를 지킨다. 카드에 `URL` 값이 있으면 클릭 시 새 탭으로 연결하고, 없으면 링크를 렌더링하지 않는다.
+## 레거시 Notion 연동
 
-6. **[배포]** GitHub 리포지토리와 Vercel을 연결해 push 시 자동 배포되도록 구성한다. 빌드 상태 확인, 오류 로그 조회, 환경변수 검증은 Claude Vercel MCP 도구로 수행한다.
+`webapp/backend/`(Flask, `GET /api/portfolio`)와 `src/legacy/NotionPortfolio.jsx`는 예전 1페이지 버전의 코드로, 삭제하지 않고 그대로 보존되어 있다. 현재 `App.jsx`의 라우트에는 연결되어 있지 않다 — 되살리려면 `App.jsx`에 Route를 추가하면 된다. Notion API 키/DB ID는 서버사이드 환경변수로만 다루고 프론트엔드나 퍼블릭 저장소에 노출하지 않는다는 원칙은 계속 유효하다.
 
-7. **[보안]** Notion API 키/DB ID는 서버사이드 환경변수 외 어디에도 하드코딩하지 않는다.
+## 배포
+
+`vercel.json`(루트)이 실제 배포에 쓰인다. `builds` + `routes`의 레거시 방식을 사용하므로 `{ "handle": "filesystem" }`을 쓰면 안 된다(정적 자산까지 `index.html`로 폴백되어 사이트 전체가 깨짐) — 대신 확장자 유무로 분기하는 명시적 정규식 라우트를 쓴다:
+
+```json
+{ "src": "/(.*\\.[a-zA-Z0-9]+)", "dest": "webapp/frontend/$1" },
+{ "src": "/(.*)", "dest": "webapp/frontend/index.html" }
+```
+
+React Router의 클라이언트 사이드 라우트(`/work/gurumetabi` 등)는 새로고침 시 이 폴백을 통해 `index.html`로 서빙된 뒤 클라이언트에서 렌더링된다.
