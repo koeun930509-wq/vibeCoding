@@ -12,7 +12,7 @@ export default function ExtraBrowserRow({ extra }) {
             objectPosition={i === 0 ? "center" : "top"}
             minHeight="min-h-[320px]"
           />
-          <span className="text-[15px] font-bold text-ink-muted text-center">{item.caption}</span>
+          <span className="text-[15px] text-ink-muted text-center">{item.caption}</span>
         </div>
       ))}
     </div>

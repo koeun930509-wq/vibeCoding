@@ -6,7 +6,7 @@ export default function SkyPickPhoneGrid({ phones }) {
       {phones.map((phone) => (
         <div key={phone.alt} className="max-w-64 mx-auto w-full flex flex-col gap-3.5">
           <PhoneFrame src={phone.src} alt={phone.alt} variant="skypick" />
-          <span className="text-[15px] font-bold text-ink-muted text-center">{phone.caption}</span>
+          <span className="text-[15px] text-ink-muted text-center">{phone.caption}</span>
         </div>
       ))}
     </div>
