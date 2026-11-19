@@ -10,7 +10,6 @@ export default function ExtraBrowserRow({ extra }) {
             alt={item.alt}
             aspect="2553/1426"
             objectPosition={i === 0 ? "center" : "top"}
-            minHeight="min-h-[320px]"
           />
           <span className="text-[15px] text-ink-muted text-center">{item.caption}</span>
         </div>

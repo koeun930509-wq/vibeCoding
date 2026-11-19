@@ -35,6 +35,16 @@
   --radius-phone: 36px;
 }
 
+/* 본문 설명글 공통 스타일: 크기·줄간격·굵기를 한 곳에서 관리 (색은 text-ink-soft 등으로 따로 지정) */
+@utility text-body {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  font-weight: 400;
+  @media (min-width: 64rem) {
+    font-size: 1.125rem;
+  }
+}
+
 body {
   margin: 0;
   word-break: keep-all;

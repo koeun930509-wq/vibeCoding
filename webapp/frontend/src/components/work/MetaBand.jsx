@@ -15,7 +15,7 @@ export default function MetaBand({ work }) {
           <div key={item.label} className="flex flex-col gap-3">
             <MetaIcon name={item.icon} />
             <span className="text-sm font-bold text-ink-muted">{item.label}</span>
-            <span className="text-lg font-normal">{item.value}</span>
+            <span className="text-body text-ink-soft">{item.value}</span>
           </div>
         ))}
       </div>

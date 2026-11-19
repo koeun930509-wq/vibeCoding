@@ -8,7 +8,7 @@ export default function RoleSection({ role, roleSummary }) {
       </div>
       <div className="flex-1 min-w-0 flex flex-col gap-5">
         <RoleCards role={role} />
-        <p className="text-lg leading-relaxed text-ink-soft">{roleSummary}</p>
+        <p className="text-body text-ink-soft">{roleSummary}</p>
       </div>
     </div>
   );
