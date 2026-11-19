@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section className="min-h-[420px]">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 pt-14 lg:pt-24 pb-16 flex flex-col gap-6">
         <span className="self-start text-sm font-bold text-accent bg-accent-tint px-3.5 py-1.5 rounded-full">
-          Portfolio &gt; VibeCoding
+          VibeCoding Portfolio
         </span>
         <h1 className="max-w-[820px] text-[34px] sm:text-[44px] lg:text-[56px] leading-tight font-extrabold tracking-tight">
           기획부터 디자인, 구현까지
