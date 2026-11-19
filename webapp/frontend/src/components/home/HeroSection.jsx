@@ -13,7 +13,7 @@ export default function HeroSection() {
         <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-ink-soft">
           실제 데이터와 API로 동작하는 서비스를 AI와 함께 빠르게 만들고, 사용자가 쓰기 편한 화면으로 다듬습니다.
         </p>
-        <p className="text-base text-ink-muted">[이름] · [이메일 / 연락처]</p>
+        <p className="text-base text-ink-muted">이고은 / 0509_ryosuke@naver.com</p>
       </div>
     </section>
   );
