@@ -5,7 +5,7 @@ export default function FeaturedCard({ work }) {
   return (
     <Link
       to={`/work/${work.slug}`}
-      className="flex flex-col bg-surface-card border border-line hover:border-line-strong rounded-lg2 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_40px_-12px_rgba(27,26,34,0.18)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 overflow-hidden text-ink no-underline"
+      className="flex flex-col bg-surface-card border border-line hover:border-line-strong rounded-lg2 transition-[transform,box-shadow,border-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-1.5 hover:shadow-[0_20px_44px_-14px_rgba(27,26,34,0.2)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 overflow-hidden text-ink no-underline"
     >
       <Screenshot src={work.screenshots?.pc} alt={`[${work.title} 대표 이미지]`} aspect="4/3" objectPosition="top" />
       <div className="p-7 flex flex-col gap-3.5 flex-1">
