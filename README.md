@@ -15,7 +15,7 @@ npm run build    # 프로덕션 빌드 (webapp/frontend/dist)
 
 ## 콘텐츠 수정
 
-모든 텍스트/링크/스크린샷 경로는 `webapp/frontend/src/data/works.js` 한 파일에 있다. 스크린샷 이미지는 `public/images/<slug>/`에 넣으면 자동으로 반영된다(파일이 없으면 placeholder로 대체).
+모든 텍스트/링크/스크린샷 경로는 `webapp/frontend/src/data/works.js` 한 파일에 있다. 스크린샷 이미지는 `public/images/<slug>/`에 넣으면 자동으로 반영된다(파일이 없으면 placeholder로 대체). 메인 히어로 소개문구·이름·이메일은 `webapp/frontend/src/components/home/HeroSection.jsx`에서 직접 수정한다.
 
 ## 배포
 
