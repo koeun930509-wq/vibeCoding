@@ -17,14 +17,14 @@ export default function OtherWorkCard({ work }) {
             </span>
           ))}
         </div>
-        <div className="flex flex-wrap gap-2 text-sm font-bold">
+        <div className="flex flex-wrap gap-1.5">
           {work.links?.live && (
-            <a href={work.links.live} target="_blank" rel="noreferrer" className="min-h-8 px-4 inline-flex items-center rounded-full bg-accent text-white no-underline hover:saturate-[1.2] transition-[filter]">
+            <a href={work.links.live} target="_blank" rel="noreferrer" className="px-2.5 py-1 inline-flex items-center rounded-full text-[13px] font-medium bg-accent text-white no-underline hover:saturate-[1.2] transition-[filter]">
               Live
             </a>
           )}
           {work.links?.github && (
-            <a href={work.links.github} target="_blank" rel="noreferrer" className="min-h-8 px-4 inline-flex items-center rounded-full bg-accent text-white no-underline hover:saturate-[1.2] transition-[filter]">
+            <a href={work.links.github} target="_blank" rel="noreferrer" className="px-2.5 py-1 inline-flex items-center rounded-full text-[13px] font-medium bg-accent text-white no-underline hover:saturate-[1.2] transition-[filter]">
               GitHub
             </a>
           )}
