@@ -15,7 +15,7 @@ export default function BrowserFrame({
 }) {
   return (
     <div
-      className={`w-full ${fill ? "lg:flex-1 lg:min-h-0" : "h-full"} bg-surface-card border border-line-strong rounded-md2 overflow-hidden flex flex-col ${className}`}
+      className={`w-full ${fill ? "lg:flex-1 lg:min-h-0" : "h-full"} bg-surface-card border border-line-strong rounded-lg2 overflow-hidden flex flex-col ${className}`}
     >
       <div className="flex shrink-0 gap-2 px-4.5 py-3.5 bg-chrome-bar border-b border-line-strong">
         <span className="w-3 h-3 rounded-full bg-chrome-dot" />
