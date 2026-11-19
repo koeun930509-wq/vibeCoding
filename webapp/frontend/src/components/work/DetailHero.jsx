@@ -39,7 +39,7 @@ export default function DetailHero({ work }) {
 
       <div className="flex flex-wrap gap-3 mt-2">
         {isTesting ? (
-          <span className="inline-flex items-center min-h-[34px] px-5 bg-[#E6E4EC] text-ink-muted text-sm font-bold rounded-sm2">
+          <span className="inline-flex items-center min-h-[38px] px-5 bg-[#E6E4EC] text-ink-muted text-sm font-bold rounded-sm2">
             테스트 중 · 링크 준비 중
           </span>
         ) : (
@@ -49,7 +49,7 @@ export default function DetailHero({ work }) {
                 href={work.links.live}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 min-h-[34px] px-5 bg-accent text-white text-sm font-bold rounded-sm2 no-underline"
+                className="inline-flex items-center gap-1.5 min-h-[38px] px-5 bg-accent text-white text-sm font-bold rounded-sm2 no-underline"
               >
                 <LiveIcon />
                 Live 보기
@@ -60,7 +60,7 @@ export default function DetailHero({ work }) {
                 href={work.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 min-h-[34px] px-5 bg-surface-card text-ink text-sm font-bold rounded-sm2 border border-line-strong no-underline"
+                className="inline-flex items-center gap-1.5 min-h-[38px] px-5 bg-surface-card text-ink text-sm font-bold rounded-sm2 border border-line-strong no-underline"
               >
                 <GithubIcon />
                 GitHub
