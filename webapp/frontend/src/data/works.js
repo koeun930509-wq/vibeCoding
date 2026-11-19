@@ -160,7 +160,7 @@ export const works = [
   {
     slug: "stongplayground",
     title: "StongPlayGround",
-    summary: "추억의 어린시절 강한 자만 살아남았던 놀이터를 3D로 구현",
+    summary: "추억의 어린시절 강한 자만 살아남았던 놀이터를 3D로 구현한 웹모바일 게임",
     featured: false,
     stack: ["three.js", "Supabase"],
     links: { live: "https://strongplayground.vercel.app/", github: "https://github.com/Banzai0509/StrongPlayGround" },
