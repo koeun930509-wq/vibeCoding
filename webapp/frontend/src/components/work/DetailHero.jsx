@@ -23,7 +23,7 @@ export default function DetailHero({ work }) {
 
   return (
     <div className="max-w-[1280px] mx-auto px-5 sm:px-8 pt-14 sm:pt-24 pb-14 flex flex-col gap-7">
-      <div className="flex flex-wrap gap-2">
+      <div className="animate-fade-up motion-reduce:animate-none flex flex-wrap gap-2">
         {work.chips.map((chip, i) => (
           <Chip key={chip} variant={i === 0 ? "solid" : "outline"}>
             {chip}
@@ -31,13 +31,13 @@ export default function DetailHero({ work }) {
         ))}
       </div>
 
-      <h1 className="text-[44px] sm:text-[56px] lg:text-[80px] leading-[1.05] font-extrabold tracking-tight">
+      <h1 style={{ animationDelay: "120ms" }} className="animate-fade-up motion-reduce:animate-none text-[44px] sm:text-[56px] lg:text-[80px] leading-[1.05] font-extrabold tracking-tight">
         {work.title}
       </h1>
 
-      <p className="text-lg sm:text-xl lg:text-2xl leading-snug text-ink-soft">{work.summary}</p>
+      <p style={{ animationDelay: "240ms" }} className="animate-fade-up motion-reduce:animate-none text-lg sm:text-xl lg:text-2xl leading-snug text-ink-soft">{work.summary}</p>
 
-      <div className="flex flex-wrap gap-3 mt-2">
+      <div style={{ animationDelay: "360ms" }} className="animate-fade-up motion-reduce:animate-none flex flex-wrap gap-3 mt-2">
         {isTesting ? (
           <span className="inline-flex items-center min-h-[38px] px-5 bg-[#E6E4EC] text-ink-muted text-sm font-bold rounded-sm2">
             테스트 중 · 링크 준비 중

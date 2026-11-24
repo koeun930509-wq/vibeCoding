@@ -10,6 +10,7 @@ import DecisionsSection from "../components/work/DecisionsSection.jsx";
 import LessonSection from "../components/work/LessonSection.jsx";
 import TechSection from "../components/work/TechSection.jsx";
 import PrevNextNav from "../components/work/PrevNextNav.jsx";
+import Reveal from "../components/Reveal.jsx";
 
 export default function WorkDetail() {
   const { slug } = useParams();
@@ -30,17 +31,17 @@ export default function WorkDetail() {
   const { prev, next } = getAdjacentWorks(slug);
 
   return (
-    <div className="min-h-screen bg-surface text-ink font-sans">
+    <div key={slug} className="min-h-screen bg-surface text-ink font-sans">
       <TopBar caseIndex={caseIndex} total={featuredWorks.length} />
       <DetailHero work={work} />
-      <ScreenshotSection work={work} />
-      <MetaBand work={work} />
-      <ProblemSection problem={work.problem} />
-      <RoleSection role={work.role} roleSummary={work.roleSummary} />
-      <DecisionsSection decisions={work.decisions} />
-      <LessonSection lesson={work.lesson} />
-      <TechSection stack={work.stack} />
-      <PrevNextNav prev={prev} next={next} />
+      <Reveal delay={200}><ScreenshotSection work={work} /></Reveal>
+      <Reveal><MetaBand work={work} /></Reveal>
+      <Reveal><ProblemSection problem={work.problem} /></Reveal>
+      <Reveal><RoleSection role={work.role} roleSummary={work.roleSummary} /></Reveal>
+      <Reveal><DecisionsSection decisions={work.decisions} /></Reveal>
+      <Reveal><LessonSection lesson={work.lesson} /></Reveal>
+      <Reveal><TechSection stack={work.stack} /></Reveal>
+      <Reveal><PrevNextNav prev={prev} next={next} /></Reveal>
     </div>
   );
 }
