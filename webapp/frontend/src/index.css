@@ -33,6 +33,39 @@
   --radius-lg2: 20px;
   --radius-xl2: 24px;
   --radius-phone: 36px;
+
+  /* 첫 화면 진입 애니메이션 */
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* 스크롤 등장 효과 (Reveal 컴포넌트에서 is-visible 클래스가 붙으면 나타남) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* 본문 설명글 공통 스타일: 크기·줄간격·굵기를 한 곳에서 관리 (색은 text-ink-soft 등으로 따로 지정) */

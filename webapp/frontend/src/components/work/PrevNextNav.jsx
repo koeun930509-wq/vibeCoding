@@ -12,9 +12,9 @@ export default function PrevNextNav({ prev, next }) {
             <span className="text-[28px] font-extrabold tracking-tight">{prev.title}</span>
             <Link
               to={`/work/${prev.slug}`}
-              className="mt-3 w-full sm:w-auto justify-center inline-flex items-center min-h-12 px-7 bg-surface-card text-ink text-base font-bold rounded-sm2 border border-line-strong no-underline"
+              className="group mt-3 w-full sm:w-auto justify-center inline-flex items-center gap-1 min-h-12 px-7 bg-surface-card text-ink text-base font-bold rounded-sm2 border border-line-strong no-underline"
             >
-              ← 이전 케이스 보기
+              <span className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none group-hover:-translate-x-1">←</span> 이전 케이스 보기
             </Link>
           </div>
         ) : (
@@ -26,9 +26,9 @@ export default function PrevNextNav({ prev, next }) {
             <span className="text-[28px] font-extrabold tracking-tight">{next.title}</span>
             <Link
               to={`/work/${next.slug}`}
-              className="mt-3 w-full sm:w-auto justify-center inline-flex items-center min-h-12 px-7 bg-accent text-white text-base font-bold rounded-sm2 no-underline"
+              className="group mt-3 w-full sm:w-auto justify-center inline-flex items-center gap-1 min-h-12 px-7 bg-accent text-white text-base font-bold rounded-sm2 no-underline"
             >
-              다음 케이스 보기 →
+              다음 케이스 보기 <span className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none group-hover:translate-x-1">→</span>
             </Link>
           </div>
         ) : null}
