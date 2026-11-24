@@ -2,6 +2,7 @@ import { useLayoutEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import WorkDetail from "./pages/WorkDetail.jsx";
+import ScrollTopButton from "./components/ScrollTopButton.jsx";
 
 // 페이지(경로)가 바뀔 때마다 맨 위로 스크롤
 function ScrollToTop() {
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <ScrollTopButton />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work/:slug" element={<WorkDetail />} />
