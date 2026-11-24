@@ -22,7 +22,7 @@ export default function ScrollTopButton() {
       onClick={toTop}
       aria-label="맨 위로 이동"
       tabIndex={show ? 0 : -1}
-      className={`fixed right-5 bottom-5 lg:right-8 lg:bottom-8 z-50 inline-flex items-center justify-center w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-accent text-white border-0 cursor-pointer shadow-[0_8px_24px_-8px_rgba(27,26,34,0.35)] transition-[opacity,transform,filter] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:saturate-[1.2] motion-reduce:transition-none ${
+      className={`fixed right-5 bottom-5 lg:right-8 lg:bottom-8 z-50 inline-flex items-center justify-center w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-surface-card text-ink border border-line-strong cursor-pointer shadow-[0_8px_24px_-8px_rgba(27,26,34,0.25)] transition-[opacity,transform,color,border-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:text-accent hover:border-accent motion-reduce:transition-none ${
         show ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"
       }`}
     >
