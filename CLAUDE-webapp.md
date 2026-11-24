@@ -82,3 +82,9 @@ vibeCoding/                               # 저장소 루트 = Vite root
 ```
 
 React Router의 클라이언트 사이드 라우트(`/work/gurumetabi` 등)는 새로고침 시 이 폴백을 통해 `index.html`로 서빙된 뒤 클라이언트에서 렌더링된다.
+
+## 커밋 규칙
+
+- 커밋 메시지는 한국어로 작성한다.
+- push 전에 `webapp/frontend`에서 `npm run build`를 실행하고, 실패하면 push하지 않는다.
+- 새로 만든 파일도 반드시 함께 커밋한다.
