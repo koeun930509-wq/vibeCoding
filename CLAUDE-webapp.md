@@ -39,7 +39,11 @@ vibeCoding/                               # 저장소 루트 = Vite root
             │   ├── Home.jsx              # 메인: Hero + 대표작 그리드 + 기타 작업 섹션
             │   └── WorkDetail.jsx        # 사례 상세: /work/:slug
             ├── components/
-            │   ├── home/                 # HeroSection, FeaturedGrid/Card, OtherWorkGrid/Card
+            │   ├── Reveal.jsx            # 스크롤 진입 시 아래→위 페이드인 래퍼(IntersectionObserver), delay(ms)로 시차 지정
+            │   ├── ScrollTopButton.jsx   # 우측 하단 고정, 400px 이상 스크롤 시 노출되는 맨 위로 가기 버튼. 전역(App.jsx)에 배치
+            │   ├── home/                 # HeroSection, FeaturedGrid/Card, OtherWorkGrid/Card, CardMedia, ParallaxBg
+            │   │                         # CardMedia: 대표작/기타 작업 카드 공용 썸네일(4:3 고정) — PC는 BrowserBar, SkyPick은 PhoneFrame의 StatusBar를 상단에 얹고 나머지를 이미지가 채움
+            │   │                         # ParallaxBg: 페이지 고정 배경, 스크롤에 따라 느리게 이동(패럴랙스) + 확대/페이드 브리딩 애니메이션(bg-breathe) 루프
             │   └── work/                 # TopBar, DetailHero, Screenshot, BrowserFrame, PhoneFrame,
             │                             # ScreenshotSection(slug별 분기), MetaBand, ProblemSection,
             │                             # RoleSection/RoleCards, DecisionsSection/DecisionCard,
@@ -67,6 +71,9 @@ vibeCoding/                               # 저장소 루트 = Vite root
 - 콘텐츠 최대 폭은 `max-w-[1280px]`로 모든 섹션 컨테이너에서 통일.
 - 카드 hover는 기본적으로 테두리색 변화(`border-line` → `hover:border-line-strong`)만 사용한다. 대표작 카드(`FeaturedCard`)는 예외로 테두리색 변화에 더해 떠오르는 효과(`hover:-translate-y-1.5`)와 그림자(`hover:shadow-[...]`)를 사용하며, 애니메이션은 expo-out 커브(`duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]`)로 처리하고 `motion-reduce`에서 비활성화한다.
 - 브레이크포인트는 Tailwind 기본값(`sm` 640 / `md` 768 / `lg` 1024)을 쓰되, 그리드 열 수 전환은 주로 `md`/`lg`에서, 타이포그래피는 기본값→`sm`→`lg` 3단으로 처리한다.
+- 등장 애니메이션은 두 종류로 통일한다: 첫 화면 요소(히어로, 상세 히어로)는 `animate-fade-up`로 순차 페이드업(각 요소 `animationDelay`를 120ms씩 늘려 시차), 스크롤로 들어오는 하위 섹션/카드는 `Reveal` 컴포넌트로 감싼다. 둘 다 expo-out 커브(`cubic-bezier(0.16,1,0.3,1)`)를 쓰고 `motion-reduce`에서 비활성화한다.
+- 버튼(Live/GitHub/이전·다음 케이스)은 hover 시 `-translate-y-0.5`로 살짝 떠오르며 그림자가 강해지는 패턴을 공통으로 쓴다(`duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]`).
+- 페이지 배경(`ParallaxBg`)은 스크롤 속도보다 느리게 움직이는 패럴랙스에 더해, 16초→12초 주기로 천천히 확대(scale 1→1.15)되고 투명도가 오르내리는 브리딩 애니메이션을 더해 정적인 배경에 생동감을 준다.
 
 ## 레거시 Notion 연동
 
