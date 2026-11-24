@@ -119,7 +119,7 @@ export const works = [
     status: "testing",
     caseLabel: "대표작 03 · 테스트 중",
     chips: ["모바일 앱 · 날씨", "테스트 진행 중"],
-    links: {},
+    links: { github: "https://github.com/koeun930509-wq/skypick-android" },
     role: {
       mine: ["[서비스 기획]", "[UI 디자인]", "[퍼블리싱 수정]"],
       ai: ["[앱 구현 · API 연동]"],

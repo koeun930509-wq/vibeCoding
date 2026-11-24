@@ -38,12 +38,12 @@ export default function DetailHero({ work }) {
       <p style={{ animationDelay: "240ms" }} className="animate-fade-up motion-reduce:animate-none text-lg sm:text-xl lg:text-2xl leading-snug text-ink-soft">{work.summary}</p>
 
       <div style={{ animationDelay: "360ms" }} className="animate-fade-up motion-reduce:animate-none flex flex-wrap gap-3 mt-2">
-        {isTesting ? (
+        {isTesting && (
           <span className="inline-flex items-center min-h-[38px] px-5 bg-[#E6E4EC] text-ink-muted text-sm font-bold rounded-sm2">
             테스트 중 · 링크 준비 중
           </span>
-        ) : (
-          <>
+        )}
+        <>
             {work.links?.live && (
               <a
                 href={work.links.live}
@@ -66,8 +66,7 @@ export default function DetailHero({ work }) {
                 GitHub
               </a>
             )}
-          </>
-        )}
+        </>
       </div>
     </div>
   );
