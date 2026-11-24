@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 /**
  * 페이지 전체 배경. 스크롤하면 콘텐츠보다 천천히(약 12vh 범위) 움직여서 깊이감을 준다.
  * 이미지 영역을 위아래로 15vh씩 크게 잡아서 움직여도 가장자리가 비지 않는다.
+ * 안쪽 레이어는 확대 + 투명도 루프(bg-breathe)로 숨 쉬듯 움직인다.
  */
 export default function ParallaxBg() {
   const ref = useRef(null);
@@ -39,7 +40,9 @@ export default function ParallaxBg() {
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none fixed inset-x-0 -top-[15vh] -bottom-[15vh] -z-10 bg-surface bg-[url('/images/page-bg.png')] bg-cover bg-center bg-no-repeat will-change-transform"
-    />
+      className="pointer-events-none fixed inset-x-0 -top-[15vh] -bottom-[15vh] -z-10 bg-surface will-change-transform"
+    >
+      <div className="absolute inset-0 animate-bg-breathe motion-reduce:animate-none bg-[url('/images/page-bg.png')] bg-cover bg-center bg-no-repeat will-change-[transform,opacity]" />
+    </div>
   );
 }

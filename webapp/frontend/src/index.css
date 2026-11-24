@@ -46,6 +46,19 @@
       transform: none;
     }
   }
+
+  /* 배경 브리딩: 천천히 확대되며 투명도가 함께 오르내림 (Ken Burns + 페이드 루프) */
+  --animate-bg-breathe: bg-breathe 16s ease-in-out infinite alternate;
+  @keyframes bg-breathe {
+    from {
+      opacity: 0.75;
+      transform: scale(1);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+  }
 }
 
 /* 스크롤 등장 효과 (Reveal 컴포넌트에서 is-visible 클래스가 붙으면 나타남) */
