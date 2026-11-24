@@ -49,7 +49,7 @@ export default function DetailHero({ work }) {
                 href={work.links.live}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 min-h-[38px] px-5 bg-accent text-white text-sm font-bold rounded-sm2 no-underline"
+                className="inline-flex items-center gap-1.5 min-h-[38px] px-5 bg-accent text-white text-sm font-bold rounded-sm2 no-underline transition-[transform,box-shadow,filter,color,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0 hover:saturate-[1.15] hover:shadow-[0_10px_24px_-10px_rgba(91,75,219,0.6)]"
               >
                 <LiveIcon />
                 Live 보기
@@ -60,7 +60,7 @@ export default function DetailHero({ work }) {
                 href={work.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 min-h-[38px] px-5 bg-surface-card text-ink text-sm font-bold rounded-sm2 border border-line-strong no-underline"
+                className="inline-flex items-center gap-1.5 min-h-[38px] px-5 bg-surface-card text-ink text-sm font-bold rounded-sm2 border border-line-strong no-underline transition-[transform,box-shadow,filter,color,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0 hover:border-accent hover:text-accent hover:shadow-[0_10px_24px_-12px_rgba(27,26,34,0.3)]"
               >
                 <GithubIcon />
                 GitHub
